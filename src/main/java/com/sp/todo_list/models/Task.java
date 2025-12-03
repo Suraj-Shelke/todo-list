@@ -35,4 +35,16 @@ public class Task {
     public void setCompleted(boolean completed) {
         this.completed = completed;
     }
+
+    public Task() {
+    }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", task='" + task + '\'' +
+                ", completed=" + completed +
+                '}';
+    }
 }

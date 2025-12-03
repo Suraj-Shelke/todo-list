@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
+
 @Component("TaskService")
 public class TaskServiceImpl implements TaskService {
 
@@ -24,8 +26,8 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public Task findTaskById(Long id) {
-        return taskRepository.getById(id);
+    public Optional<Task> findTaskById(Long id) {
+        return taskRepository.findById(id);
     }
 
     @Override
@@ -40,7 +42,7 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public void deleteTask(Task task) {
-        taskRepository.delete(task);
+         taskRepository.delete(task);
     }
 
     @Override
